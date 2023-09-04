@@ -1,6 +1,5 @@
 # SEM
 
-Hellow jake was here
+#helo im jy
 
-Jake was here for the second time
-
+JAKEY WAS HERE
