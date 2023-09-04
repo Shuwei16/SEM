@@ -1,9 +1,5 @@
 # SEM
 
-#helo im jy
-
-hello
-
-ANyeong
+Jakey updated now!
 
 
