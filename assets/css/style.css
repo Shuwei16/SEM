@@ -516,7 +516,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #9ae1af;
+  background: #ECA500;
   margin: 4px 10px;
 }
 
@@ -899,7 +899,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #c1ecce;
+  color: #ECA500;
   font-size: 26px;
 }
 
@@ -960,7 +960,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Cource Details
+# Course Details
 --------------------------------------------------------------*/
 .course-details h3 {
   font-size: 24px;
@@ -1014,6 +1014,21 @@ section {
   color: #657a6d;
 }
 
+.course-details .row .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course-details .row .content ul li {
+  padding-bottom: 10px;
+}
+
+.course-details .row .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #ECA500;
+}
+
 /*--------------------------------------------------------------
 # Cource Details Tabs
 --------------------------------------------------------------*/
@@ -1063,6 +1078,21 @@ section {
 
 .cource-details-tabs .details p:last-child {
   margin-bottom: 0;
+}
+
+.tab-pane .row .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tab-pane .row .content ul li {
+  padding-bottom: 10px;
+}
+
+.tab-pane .row .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #ECA500;
 }
 
 @media (max-width: 992px) {
