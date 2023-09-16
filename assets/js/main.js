@@ -132,4 +132,38 @@
    */
   new PureCounter();
 
+  let entryQualificationDropdown = select('#entryQualificationDropdown');
+  let triggeredQualificationSTPMAUEC = select('#triggeredQualificationSTPMAUEC');
+  let triggeredQualificationSPM = select('#triggeredQualificationSPM');
+  let triggeredQualificationDip = select('#triggeredQualificationDip');
+  let triggeredQualificationFound = select('#triggeredQualificationFound');
+
+  entryQualificationDropdown.addEventListener('change',function(){
+    let selectedEntryQualification=entryQualificationDropdown.value;
+
+    triggeredQualificationSTPMAUEC.style.display='none';
+    triggeredQualificationSPM.style.display='none';
+    triggeredQualificationDip.style.display='none';
+    triggeredQualificationFound.style.display='none';
+
+    if(selectedEntryQualification=='stpmAUEC'){
+      triggeredQualificationSTPMAUEC.style.display='block';
+    }
+    else if(selectedEntryQualification=='spm'){
+      triggeredQualificationSPM.style.display='block';
+    }
+    else if(selectedEntryQualification=='diploma'){
+      triggeredQualificationDip.style.display='block';
+    }
+    else if(selectedEntryQualification=='foundation'){
+      triggeredQualificationFound.style.display='block';
+    }
+    else{
+      triggeredQualificationSTPMAUEC.style.display='none';
+      triggeredQualificationSPM.style.display='none';
+      triggeredQualificationDip.style.display='none';
+      triggeredQualificationFound.style.display='none';
+    }
+  })
+
 })()
