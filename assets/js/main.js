@@ -289,11 +289,10 @@ function validateForm() {
   }
   else if(entryRequirementValue == "diploma"){
       // Diploma variable
-      let dipCGPA = parseFloat(document.forms["registrationForm"]["dipCGPA"].value);
+      let dipCGPA = document.forms["registrationForm"]["dipCGPA"].value;
 
-      if (isNaN(dipCGPA)) {
-        // Handle the case where the field is empty or not a number
-        alert('Please enter a valid CGPA.');
+      if (dipCGPA<=0 || dipCGPA>4) {
+        alert('Please enter a valid CGPA.(1-4).');
       } else if (dipCGPA < 2.5) {
         alert('Your CGPA is below 2.5: ' + dipCGPA);
       } else {
@@ -304,51 +303,15 @@ function validateForm() {
       // Foundation variable
       let foundCGPA = document.forms["registrationForm"]["foundCGPA"].value;
 
-      if(foundCGPA < 2.5){
-        alert(errorMsg);
-      }
-      else{
+      if (foundCGPA<=0 || foundCGPA>4) {
+        alert('Please enter a valid CGPA.(1-4).');
+      } else if (foundCGPA < 2.5) {
+        alert('Your CGPA is below 2.5: ' + foundCGPA);
+      } else {
         alert(successMsg);
       }
   }
   else{
     alert("Please make a choice!");
   }
-  // Default error message
-  // let errorMessage = "Sorry, you are rejected for this course. Minimum CGPA/Grade required is 2.5 (C).";
-  // let hasError = false; // Flag to track if an error occurred
-
-  // if (entryRequirementValue == "foundation" && foundCGPA < 2.5) {
-  //   alert(errorMessage);
-  //   hasError = true;
-  // }
-
-  // if (entryRequirementValue == "diploma" && dipCGPA < 2.5) {
-  //   alert(errorMessage);
-  //   hasError = true;
-  // }
-
-  // if (entryRequirementValue == "stpmAUEC" &&
-  //   (stpmMathMGrade > "C" || stpmMathTGrade > "C" || stpmICTGrade > "C" || stpmPhyGrade > "C" || stpmChmGrade > "C" || stpmBioGrade > "C")) {
-  //   alert(errorMessage);
-  //   hasError = true;
-  // }
-
-  // if (entryRequirementValue == "spm" &&
-  //   (spmBMGrade > "C" || spmEngGrade > "C" || spmSjGrade > "C" || spmAMGrade > "C" || spmMathsGrade > "C" || spmPhyGrade > "C" || spmChmGrade > "C" || spmBioGrade > "C" || spmMoralGrade > "C")) {
-  //   alert(errorMessage);
-  //   hasError = true;
-  // }
-
-  // if (!hasError) {
-  //   alert("You are registered successfully!");
-  // }
-
-  // return !hasError; // If validation passes, allow the form to submit
 }
-
-
-
-
-
-
