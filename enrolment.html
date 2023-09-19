@@ -114,7 +114,8 @@
         <div class="mt-5">
           <h4>Personal Information</h4>
 
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form method="post" action="enrolment.php" role="form" class="php-email-form" id="registrationForm"
+            onsubmit="return validateForm()">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Your First Name"
@@ -186,7 +187,7 @@
 
             <div class="row">
               <div class="col-md-4 form-group mt-3 mt-md-0">
-                <label for="intake">Intake</label>
+                <label for="intakeDropdown">Intake</label>
                 <select name="intakeDropdown" id="intakeDropdown" class="dropdown-toggle btn enrol-dropdown" required
                   style="width:100%;border-color: rgb(218, 216, 216);">
                   <option value="november2023">November 2023</option>
@@ -195,7 +196,7 @@
                 </select>
               </div>
               <div class="col-md-4 form-group mt-3 mt-md-0">
-                <label for="programme">Programme</label>
+                <label for="programmeDropdown">Programme</label>
                 <select name="programmeDropdown" id="programmeDropdown" class="dropdown-toggle btn enrol-dropdown"
                   required style="width:100%;border-color: rgb(218, 216, 216);">
                   <option value="bachelorInDS">Bachelor of Computer Science (Honours) in Data Science
@@ -209,7 +210,7 @@
                 </select>
               </div>
               <div class="col-md-4 form-group mt-3 mt-md-0">
-                <label for="campus">Campus</label>
+                <label for="campusDropdown">Campus</label>
                 <select name="campusDropdown" id="campusDropdown" class="dropdown-toggle btn enrol-dropdown" required
                   style="width:100%;border-color: rgb(218, 216, 216);">
                   <option value="klCampus">Kuala Lumpur Main Campus</option>
@@ -246,11 +247,11 @@
             <div class="mb-3">
               <div id="triggeredQualificationSTPMAUEC" class="form-group mt-3" style="display: none;">
                 <h5>STPM / A-level / UEC / Equivalent</h5>
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmMathMGrade">Mathematics M (Management)</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmMathMGrade" name="stpmMathMGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -266,17 +267,17 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmMathMNGMP" id="stpmMathMNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmMathTGrade">Mathematics T (Technology)</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmMathTGrade" name="stpmMathTGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -292,17 +293,17 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmMathTNGMP" id="stpmMathTNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmICTGrade">Information and Communications Technology (ICT)</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmICTGrade" name="stpmICTGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -318,17 +319,17 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmICTNGMP" id="stpmICTNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmPhyGrade">Physics</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmPhyGrade" name="stpmPhyGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -344,17 +345,17 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmPhyNGMP" id="stpmPhyNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmChmGrade">Chemistry</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmChmGrade" name="stpmChmGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -370,17 +371,17 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmChmNGMP" id="stpmChmNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="row align-items-center">
-                  <div class="col-md-4 mt-3 mt-md-0">
+                <div class="row align-items-center mt-3">
+                  <div class="col-md-6">
                     <label for="stpmBioGrade">Biology</label>
                   </div>
-                  <div class="col-md-4 mt-3 mt-md-0">
+                  <div class="col-md-6">
                     <select id="stpmBioGrade" name="stpmBioGrade" class="dropdown-toggle btn enrol-dropdown w-100"
                       required style="border-color: rgb(218, 216, 216);">
                       <option value="gradeA">A</option>
@@ -396,10 +397,10 @@
                       <option value="gradeF">F</option>
                     </select>
                   </div>
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="number" name="stpmBioNGMP" id="stpmBioNGMP" class="form-control"
                       placeholder="Your NGMP" required min="0" max="4">
-                  </div>
+                  </div> -->
                 </div>
 
               </div>
@@ -636,7 +637,7 @@
                   </div>
                   <div class="col-md-6">
                     <input type="number" name="dipCGPA" id="dipCGPA" class="form-control" placeholder="Your CGPA"
-                      required min="0" max="4">
+                      required min="0" max="4" step="0.001">
                   </div>
                 </div>
               </div>
@@ -648,8 +649,8 @@
                     <label for="foundCGPA">CGPA</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="number" name="foundCGPA" id="foundCGPA" class="form-control" placeholder="Your CGPA"
-                      required min="0" max="4">
+                    <input type="number" id="foundCGPA" class="form-control" placeholder="Your CGPA" min="0" max="4"
+                      step="0.001">
                   </div>
                 </div>
               </div>
@@ -661,7 +662,11 @@
               <div class="sent-message">Your registration has been sent. Thank you!</div>
             </div>
 
-            <div class="text-center"><button type="submit">Submit</button></div>
+            <p id="enrolResult"></p>
+
+            <div class="text-center">
+              <button type="submit" id="registrationFormSubmit">Submit</button>
+            </div>
 
           </form>
 

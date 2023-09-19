@@ -132,6 +132,9 @@
    */
   new PureCounter();
 
+  /**
+   * Display respective entry qualification input field
+   */
   let entryQualificationDropdown = select('#entryQualificationDropdown');
   let triggeredQualificationSTPMAUEC = select('#triggeredQualificationSTPMAUEC');
   let triggeredQualificationSPM = select('#triggeredQualificationSPM');
@@ -165,5 +168,48 @@
       triggeredQualificationFound.style.display='none';
     }
   })
+
+  /**
+   * auto compare qualification
+   */
+  function validateForm() {
+    var dipCGPA = document.forms["registrationForm"]["dipCGPA"].value;
+    //var password = document.forms["registrationForm"]["password"].value;
+
+    // Add your validation logic here
+    if (dipCGPA < 2.5) {
+        alert("Sorry, you are rejected for the course. Minimum CGPA required is 2.5.");
+        return false; // Prevent form submission
+    }
+
+    // If validation passes, allow the form to submit
+    return true;
+}
+
+
+
+//   document.addEventListener("DOMContentLoaded", function () {
+//     let registrationForm = document.getElementById('triggeredQualificationDip'); // Updated ID
+//     let diplomaCGPA = document.getElementById('dipCGPA');
+//     let enrolResult = document.getElementById('enrolResult');
+
+//     registrationForm.addEventListener("submit", function (event) {
+//         event.preventDefault();
+
+//         const cgpa = parseFloat(diplomaCGPA.value);
+//         console.log("CGPA entered:", cgpa); // Add this line to check the value of cgpa
+        
+//         if (isNaN(cgpa)) {
+//             enrolResult.innerText = "Please enter a valid CGPA.";
+//         } 
+//         else {
+//             if (cgpa >= 2.5) {
+//                 enrolResult.innerText = "Congratulations! You are accepted for the course.";
+//             } else {
+//                 enrolResult.innerText = "Sorry, you are rejected for the course. Minimum CGPA required is 2.5.";
+//             }
+//           }
+//     });
+// });
 
 })()
