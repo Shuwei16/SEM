@@ -178,32 +178,142 @@
  */
 function validateForm() {
   let entryRequirementValue = entryQualificationDropdown.value;
+  let courseSelected = programmeDropdown.value;
+  let successMsg = "Congrats! You are accepted and enrolled in the course : " + courseSelected +"!";
+  let errorMsg = "Sorry, you are rejected for this course. Minimum CGPA/Grade required is 2.5 (C).";
 
-  // Foundation variable
-  let foundCGPA = document.forms["registrationForm"]["foundCGPA"].value;
-  
-  // Diploma variable
-  let dipCGPA = document.forms["registrationForm"]["dipCGPA"].value;
+  //JX section
+  if(entryRequirementValue == "stpmAUEC"){
+      // STPM variables
+      let stpmMathMGrade = document.forms["registrationForm"]["stpmMathMGrade"].value;
+      let stpmMathTGrade = document.forms["registrationForm"]["stpmMathTGrade"].value;
+      let stpmICTGrade = document.forms["registrationForm"]["stpmICTGrade"].value;
+      let stpmPhyGrade = document.forms["registrationForm"]["stpmPhyGrade"].value;
+      let stpmChmGrade = document.forms["registrationForm"]["stpmChmGrade"].value;
+      let stpmBioGrade = document.forms["registrationForm"]["stpmBioGrade"].value;
 
-  // STPM variables
-  let stpmMathMGrade = stpmMathMGrade.value;
-  let stpmMathTGrade = document.getElementById("stpmMathTGrade");
-  let stpmICTGrade = document.getElementById("stpmICTGrade");
-  let stpmPhyGrade = document.getElementById("stpmPhyGrade");
-  let stpmChmGrade = document.getElementById("stpmChmGrade");
-  let stpmBioGrade = document.getElementById("stpmBioGrade");
+      let count = 0; // Initialize a count variable to keep track of grades greater than "C"
 
-  // SPM variables
-  let spmBMGrade = document.forms["registrationForm"]["spmBMGrade"].value;
-  let spmEngGrade = document.forms["registrationForm"]["spmEngGrade"].value;
-  let spmSjGrade = document.forms["registrationForm"]["spmSjGrade"].value;
-  let spmAMGrade = document.forms["registrationForm"]["spmAMGrade"].value;
-  let spmMathsGrade = document.forms["registrationForm"]["spmMathsGrade"].value;
-  let spmPhyGrade = document.forms["registrationForm"]["spmPhyGrade"].value;
-  let spmChmGrade = document.forms["registrationForm"]["spmChmGrade"].value;
-  let spmBioGrade = document.forms["registrationForm"]["spmBioGrade"].value;
-  let spmMoralGrade = document.forms["registrationForm"]["spmMoralGrade"].value;
-  alert(stpmMathMGrade);
+      if (stpmMathMGrade <= "C-") {
+        count++;
+      }
+      if (stpmMathTGrade <=  "C-") {
+        count++;
+      }
+      if (stpmICTGrade <=  "C-") {
+        count++;
+      }
+      if (stpmPhyGrade <=  "C-") {
+        count++;
+      }
+      if (stpmChmGrade <=  "C-") {
+        count++;
+      }
+      if (stpmBioGrade <=  "C-") {
+        count++;
+      }
+
+      if(count>=3) {
+        alert(successMsg);
+        count = 0;
+      }
+      else{
+        alert(errorMsg);
+        count = 0;
+      }
+  }
+  else if(entryRequirementValue == "spm"){
+      // SPM variables
+      let spmBMGrade = document.forms["registrationForm"]["spmBMGrade"].value;
+      let spmEngGrade = document.forms["registrationForm"]["spmEngGrade"].value;
+      let spmSjGrade = document.forms["registrationForm"]["spmSjGrade"].value;
+      let spmAMGrade = document.forms["registrationForm"]["spmAMGrade"].value;
+      let spmMathsGrade = document.forms["registrationForm"]["spmMathsGrade"].value;
+      let spmPhyGrade = document.forms["registrationForm"]["spmPhyGrade"].value;
+      let spmChmGrade = document.forms["registrationForm"]["spmChmGrade"].value;
+      let spmBioGrade = document.forms["registrationForm"]["spmBioGrade"].value;
+      let spmMoralGrade = document.forms["registrationForm"]["spmMoralGrade"].value;
+
+      let count = 0;
+      let sejPass = true;
+
+      if (spmBMGrade <= "C-") {
+        count++;
+      }
+      if (spmEngGrade <=  "C-") {
+        count++;
+      }
+      if (spmSjGrade <= "C-") {
+        count++;
+      }
+      if (spmSjGrade > "D") {
+        sejPass=false;
+      }
+      else{
+        sejPass=true;
+      }
+      if (spmAMGrade <=  "C-") {
+        count++;
+      }
+      if (spmMathsGrade <=  "C-") {
+        count++;
+      }
+      if (spmPhyGrade <=  "C-") {
+        count++;
+      }
+      if (spmChmGrade <=  "C-") {
+        count++;
+      }
+      if (spmBioGrade <=  "C-") {
+        count++;
+      }
+      if (spmMoralGrade <=  "C-") {
+        count++;
+      }
+
+      if(count<3) {
+        alert(errorMsg);
+         count = 0;
+         sejPass = true;
+      }
+      else if(sejPass && count>=3){
+        alert(successMsg);
+        count = 0;
+        sejPass = true;
+      }
+      else{
+        alert("Sorry, you failed your Sejarah.");
+        count = 0;
+        sejPass = true;
+      }
+  }
+  else if(entryRequirementValue == "diploma"){
+      // Diploma variable
+      let dipCGPA = parseFloat(document.forms["registrationForm"]["dipCGPA"].value);
+
+      if (isNaN(dipCGPA)) {
+        // Handle the case where the field is empty or not a number
+        alert('Please enter a valid CGPA.');
+      } else if (dipCGPA < 2.5) {
+        alert('Your CGPA is below 2.5: ' + dipCGPA);
+      } else {
+        alert(successMsg);
+      }
+  }
+  else if(entryRequirementValue == "foundation"){
+      // Foundation variable
+      let foundCGPA = document.forms["registrationForm"]["foundCGPA"].value;
+
+      if(foundCGPA < 2.5){
+        alert(errorMsg);
+      }
+      else{
+        alert(successMsg);
+      }
+  }
+  else{
+    alert("Please make a choice!");
+  }
   // Default error message
   // let errorMessage = "Sorry, you are rejected for this course. Minimum CGPA/Grade required is 2.5 (C).";
   // let hasError = false; // Flag to track if an error occurred
