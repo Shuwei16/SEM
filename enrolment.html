@@ -114,8 +114,8 @@
         <div class="mt-5">
           <h4>Personal Information</h4>
 
-          <form method="post" action="enrolment.php" role="form" class="php-email-form" id="registrationForm"
-            onsubmit="return validateForm()">
+          <form method="POST" action="" class="php-email-form" id="registrationForm"
+            onsubmit="validateForm()">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Your First Name"
@@ -649,20 +649,20 @@
                     <label for="foundCGPA">CGPA</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="number" id="foundCGPA" class="form-control" placeholder="Your CGPA" min="0" max="4"
+                    <input type="number" name="foundCGPA" id="foundCGPA" class="form-control" placeholder="Your CGPA" min="0" max="4"
                       step="0.001">
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="my-3">
+            <!-- <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your registration has been sent. Thank you!</div>
             </div>
 
-            <p id="enrolResult"></p>
+            <p id="enrolResult"></p> -->
 
             <div class="text-center">
               <button type="submit" id="registrationFormSubmit">Submit</button>
