@@ -106,477 +106,487 @@
 
             <div class="container" data-aos="fade-up">
 
-                <div class="row mt-3">
-                    <div class="col-md-4 form-group">
-                        <label for="checkProgrammeQualification">Programme</label>
+                <form method="POST" action="" class="php-email-form" id="checkQualificationForm">
+                    <div class="row mt-3">
+                        <div class="col-md-4 form-group">
+                            <label for="checkProgrammeQualification">Programme</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <select name="checkProgrammeQualification" id="checkProgrammeQualification"
+                                class="dropdown-toggle btn enrol-dropdown" required
+                                style="width:100%;border-color: rgb(218, 216, 216);">
+                                <option value="Bachelor of Computer Science (Honours) in Data Science">Bachelor of
+                                    Computer
+                                    Science (Honours) in Data Science
+                                </option>
+                                <option value="Bachelor of Software Engineering (Honours)">Bachelor of Software
+                                    Engineering
+                                    (Honours)</option>
+                                <option
+                                    value="Bachelor of Computer Science (Honours) in Interactive Software Technology">
+                                    Bachelor of Computer Science (Honours) in Interactive Software Technology</option>
+                                <option value="Diploma in Computer Science">Diploma in Computer Science</option>
+                                <option value="Diploma in Information Systems">Diploma in Information Systems</option>
+                                <option value="Diploma in Information Technology">Diploma in Information Technology
+                                </option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-8 form-group">
-                        <select name="checkProgrammeQualification" id="checkProgrammeQualification"
-                            class="dropdown-toggle btn enrol-dropdown" required
-                            style="width:100%;border-color: rgb(218, 216, 216);">
-                            <option value="Bachelor of Computer Science (Honours) in Data Science">Bachelor of Computer
-                                Science (Honours) in Data Science
-                            </option>
-                            <option value="Bachelor of Software Engineering (Honours)">Bachelor of Software Engineering
-                                (Honours)</option>
-                            <option value="Bachelor of Computer Science (Honours) in Interactive Software Technology">
-                                Bachelor of Computer Science (Honours) in Interactive Software Technology</option>
-                            <option value="Diploma in Computer Science">Diploma in Computer Science</option>
-                            <option value="Diploma in Information Systems">Diploma in Information Systems</option>
-                            <option value="Diploma in Information Technology">Diploma in Information Technology</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="row mt-5">
-                    <div class="col-md-4 form-group">
-                        <label for="entryQualificationDropdown">Academic Qualification</label>
+                    <div class="row mt-5">
+                        <div class="col-md-4 form-group">
+                            <label for="entryQualificationDropdown">Academic Qualification</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <select name="entryQualificationDropdown" id="entryQualificationDropdown"
+                                class="dropdown-toggle btn enrol-dropdown" required
+                                style="width:100%;border-color: rgb(218, 216, 216);">
+                                <option value="stpmAUEC">STPM / A-level / UEC / Equivalent</option>
+                                <option value="spm">SPM</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="foundation">Foundation</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-8 form-group">
-                        <select name="entryQualificationDropdown" id="entryQualificationDropdown"
-                            class="dropdown-toggle btn enrol-dropdown" required
-                            style="width:100%;border-color: rgb(218, 216, 216);">
-                            <option value="stpmAUEC">STPM / A-level / UEC / Equivalent</option>
-                            <option value="spm">SPM</option>
-                            <option value="diploma">Diploma</option>
-                            <option value="foundation">Foundation</option>
-                        </select>
-                    </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <!-- Triggered Academic Qualification Sections -->
-                <div class="mb-3">
-                    <div id="triggeredQualificationSTPMAUEC" class="form-group mt-3" style="display: none;">
-                        <h5>STPM / A-level / UEC / Equivalent</h5>
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmMathMGrade">Mathematics M (Management)</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmMathMGrade" name="stpmMathMGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <!-- Triggered Academic Qualification Sections -->
+                    <div class="mb-3">
+                        <div id="triggeredQualificationSTPMAUEC" class="form-group mt-3" style="display: none;">
+                            <h5>STPM / A-level / UEC / Equivalent</h5>
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmMathMGrade">Mathematics M (Management)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmMathMGrade" name="stpmMathMGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmMathMNGMP" id="stpmMathMNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
-                        </div>
+                            </div>
 
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmMathTGrade">Mathematics T (Technology)</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmMathTGrade" name="stpmMathTGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmMathTGrade">Mathematics T (Technology)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmMathTGrade" name="stpmMathTGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmMathTNGMP" id="stpmMathTNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
-                        </div>
+                            </div>
 
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmICTGrade">Information and Communications Technology (ICT)</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmICTGrade" name="stpmICTGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmICTGrade">Information and Communications Technology (ICT)</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmICTGrade" name="stpmICTGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmICTNGMP" id="stpmICTNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
-                        </div>
+                            </div>
 
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmPhyGrade">Physics</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmPhyGrade" name="stpmPhyGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmPhyGrade">Physics</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmPhyGrade" name="stpmPhyGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmPhyNGMP" id="stpmPhyNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
-                        </div>
+                            </div>
 
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmChmGrade">Chemistry</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmChmGrade" name="stpmChmGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmChmGrade">Chemistry</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmChmGrade" name="stpmChmGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmChmNGMP" id="stpmChmNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
-                        </div>
+                            </div>
 
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="stpmBioGrade">Biology</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="stpmBioGrade" name="stpmBioGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="stpmBioGrade">Biology</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="stpmBioGrade" name="stpmBioGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                       <input type="number" name="stpmBioNGMP" id="stpmBioNGMP" class="form-control"
                         placeholder="Your NGMP" required min="0" max="4">
                     </div> -->
+                            </div>
+
                         </div>
 
+                        <div id="triggeredQualificationSPM" class="form-group mt-3" style="display: none;">
+                            <h5>SPM</h5>
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmBMGrade">Bahasa Melayu</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmBMGrade" name="spmBMGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmEngGrade">Bahasa Inggeris</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmEngGrade" name="spmEngGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmBCGrade">Bahasa Cina</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmBCGrade" name="spmBCGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmSjGrade">Sejarah</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmSjGrade" name="spmSjGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmMathsGrade">Mathematics</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmMathsGrade" name="spmMathsGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmAMGrade">Additional Mathematics</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmAMGrade" name="spmAMGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmPhyGrade">Physics</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmPhyGrade" name="spmPhyGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmChmGrade">Chemistry</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmChmGrade" name="spmChmGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmBioGrade">Biology</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmBioGrade" name="spmBioGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-6">
+                                    <label for="spmMoralGrade">Pendidikan Moral</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="spmMoralGrade" name="spmMoralGrade"
+                                        class="dropdown-toggle btn enrol-dropdown w-100" required
+                                        style="border-color: rgb(218, 216, 216);">
+                                        <option value="A">A</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B">B</option>
+                                        <option value="B-">B-</option>
+                                        <option value="C+">C+</option>
+                                        <option value="C">C</option>
+                                        <option value="C-">C-</option>
+                                        <option value="D+">D+</option>
+                                        <option value="D">D</option>
+                                        <option value="F">F</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="triggeredQualificationDip" class="form-group mt-3" style="display: none;">
+                            <h5>Diploma</h5>
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-4">
+                                    <label for="dipCGPA">CGPA</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="number" name="dipCGPA" id="dipCGPA" class="form-control"
+                                        placeholder="Your CGPA" min="0" max="4" step="0.0001">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="triggeredQualificationFound" class="form-group mt-3" style="display: none;">
+                            <h5>Foundation</h5>
+                            <div class="row align-items-center mt-3">
+                                <div class="col-md-4">
+                                    <label for="foundCGPA">CGPA</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="number" name="foundCGPA" id="foundCGPA" class="form-control"
+                                        placeholder="Your CGPA" required min="0" max="4" step="0.0001">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Triggered Academic Qualification Sections -->
+
+                    <br>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="enrolment.html"><button type="button" id="backBtn">Back</button></a>
+                        <button type="submit" id="registrationFormSubmit">Submit</button>
                     </div>
-
-                    <div id="triggeredQualificationSPM" class="form-group mt-3" style="display: none;">
-                        <h5>SPM</h5>
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmBMGrade">Bahasa Melayu</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmBMGrade" name="spmBMGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmEngGrade">Bahasa Inggeris</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmEngGrade" name="spmEngGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmBCGrade">Bahasa Cina</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmBCGrade" name="spmBCGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmSjGrade">Sejarah</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmSjGrade" name="spmSjGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmMathsGrade">Mathematics</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmMathsGrade" name="spmMathsGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmAMGrade">Additional Mathematics</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmAMGrade" name="spmAMGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmPhyGrade">Physics</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmPhyGrade" name="spmPhyGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmChmGrade">Chemistry</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmChmGrade" name="spmChmGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmBioGrade">Biology</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmBioGrade" name="spmBioGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-6">
-                                <label for="spmMoralGrade">Pendidikan Moral</label>
-                            </div>
-                            <div class="col-md-6">
-                                <select id="spmMoralGrade" name="spmMoralGrade"
-                                    class="dropdown-toggle btn enrol-dropdown w-100" required
-                                    style="border-color: rgb(218, 216, 216);">
-                                    <option value="A">A</option>
-                                    <option value="A-">A-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B">B</option>
-                                    <option value="B-">B-</option>
-                                    <option value="C+">C+</option>
-                                    <option value="C">C</option>
-                                    <option value="C-">C-</option>
-                                    <option value="D+">D+</option>
-                                    <option value="D">D</option>
-                                    <option value="F">F</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="triggeredQualificationDip" class="form-group mt-3" style="display: none;">
-                        <h5>Diploma</h5>
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-4">
-                                <label for="dipCGPA">CGPA</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="number" name="dipCGPA" id="dipCGPA" class="form-control"
-                                    placeholder="Your CGPA" min="0" max="4" step="0.0001">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="triggeredQualificationFound" class="form-group mt-3" style="display: none;">
-                        <h5>Foundation</h5>
-                        <div class="row align-items-center mt-3">
-                            <div class="col-md-4">
-                                <label for="foundCGPA">CGPA</label>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="number" name="foundCGPA" id="foundCGPA" class="form-control"
-                                    placeholder="Your CGPA" required min="0" max="4" step="0.0001">
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Triggered Academic Qualification Sections -->
-
-                <a href="enrolment.html"><button type="button" id="backBtn" class="mt-5">Back</button></a>
-
+                </form>
             </div>
         </section><!-- End Check Qualification Section -->
 

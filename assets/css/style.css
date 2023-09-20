@@ -1414,7 +1414,8 @@ section {
 
 .contact .php-email-form button[type=submit],
 .contact .php-email-form button[type=button],
-.check-qualification .container button[type=button] {
+.check-qualification .container button[type=button],
+.check-qualification .container button[type=submit] {
   background: #ECA500;
   border: 0;
   padding: 10px 35px;
@@ -1425,7 +1426,8 @@ section {
 
 .contact .php-email-form button[type=submit]:hover,
 .contact .php-email-form button[type=button]:hover,
-.check-qualification .container button[type=button]:hover {
+.check-qualification .container button[type=button]:hover,
+.check-qualification .container button[type=submit]:hover {
   background: #fff;
   color: #ECA500;
 }
