@@ -315,3 +315,144 @@ function validateForm() {
     alert("Please make a choice!");
   }
 }
+
+function checkForm() {
+  let entryRequirementValue = entryQualificationDropdown.value;
+  let courseSelected = checkProgrammeQualification.value;
+
+  let successMsg = "Congrats! You are qualified to enroll in the course : " + courseSelected +"!";
+  let errorMsg = "Sorry, you are NOT qualified to enroll this course. The minimum CGPA/Grade required is 2.5 (C).";
+
+  //JX section
+  if(entryRequirementValue == "stpmAUEC"){
+      // STPM variables
+      let stpmMathMGrade = document.forms["checkQualificationForm"]["stpmMathMGrade"].value;
+      let stpmMathTGrade = document.forms["checkQualificationForm"]["stpmMathTGrade"].value;
+      let stpmICTGrade = document.forms["checkQualificationForm"]["stpmICTGrade"].value;
+      let stpmPhyGrade = document.forms["checkQualificationForm"]["stpmPhyGrade"].value;
+      let stpmChmGrade = document.forms["checkQualificationForm"]["stpmChmGrade"].value;
+      let stpmBioGrade = document.forms["checkQualificationForm"]["stpmBioGrade"].value;
+
+      let count = 0; // Initialize a count variable to keep track of grades greater than "C"
+
+      if (stpmMathMGrade <= "C-") {
+        count++;
+      }
+      if (stpmMathTGrade <=  "C-") {
+        count++;
+      }
+      if (stpmICTGrade <=  "C-") {
+        count++;
+      }
+      if (stpmPhyGrade <=  "C-") {
+        count++;
+      }
+      if (stpmChmGrade <=  "C-") {
+        count++;
+      }
+      if (stpmBioGrade <=  "C-") {
+        count++;
+      }
+
+      if(count>=3) {
+        alert(successMsg);
+        count = 0;
+      }
+      else{
+        alert(errorMsg);
+        count = 0;
+      }
+  }
+  else if(entryRequirementValue == "spm"){
+      // SPM variables
+      let spmBMGrade = document.forms["checkQualificationForm"]["spmBMGrade"].value;
+      let spmEngGrade = document.forms["checkQualificationForm"]["spmEngGrade"].value;
+      let spmSjGrade = document.forms["checkQualificationForm"]["spmSjGrade"].value;
+      let spmAMGrade = document.forms["checkQualificationForm"]["spmAMGrade"].value;
+      let spmMathsGrade = document.forms["checkQualificationForm"]["spmMathsGrade"].value;
+      let spmPhyGrade = document.forms["checkQualificationForm"]["spmPhyGrade"].value;
+      let spmChmGrade = document.forms["checkQualificationForm"]["spmChmGrade"].value;
+      let spmBioGrade = document.forms["checkQualificationForm"]["spmBioGrade"].value;
+      let spmMoralGrade = document.forms["checkQualificationForm"]["spmMoralGrade"].value;
+
+      let count = 0;
+      let sejPass = true;
+
+      if (spmBMGrade <= "C-") {
+        count++;
+      }
+      if (spmEngGrade <=  "C-") {
+        count++;
+      }
+      if (spmSjGrade <= "C-") {
+        count++;
+      }
+      if (spmSjGrade > "D") {
+        sejPass=false;
+      }
+      else{
+        sejPass=true;
+      }
+      if (spmAMGrade <=  "C-") {
+        count++;
+      }
+      if (spmMathsGrade <=  "C-") {
+        count++;
+      }
+      if (spmPhyGrade <=  "C-") {
+        count++;
+      }
+      if (spmChmGrade <=  "C-") {
+        count++;
+      }
+      if (spmBioGrade <=  "C-") {
+        count++;
+      }
+      if (spmMoralGrade <=  "C-") {
+        count++;
+      }
+
+      if(count<3) {
+        alert(errorMsg);
+         count = 0;
+         sejPass = true;
+      }
+      else if(sejPass && count>=3){
+        alert(successMsg);
+        count = 0;
+        sejPass = true;
+      }
+      else{
+        alert("Sorry, you failed your Sejarah. You are NOT qualified to enroll this course.");
+        count = 0;
+        sejPass = true;
+      }
+  }
+  else if(entryRequirementValue == "diploma"){
+      // Diploma variable
+      let dipCGPA = document.forms["checkQualificationForm"]["dipCGPA"].value;
+
+      if (dipCGPA<=0 || dipCGPA>4) {
+        alert('Please enter a valid CGPA.(1-4).');
+      } else if (dipCGPA < 2.5) {
+        alert('Your CGPA is below 2.5: ' + dipCGPA);
+      } else {
+        alert(successMsg);
+      }
+  }
+  else if(entryRequirementValue == "foundation"){
+      // Foundation variable
+      let foundCGPA = document.forms["checkQualificationForm"]["foundCGPA"].value;
+
+      if (foundCGPA<=0 || foundCGPA>4) {
+        alert('Please enter a valid CGPA.(1-4).');
+      } else if (foundCGPA < 2.5) {
+        alert('Your CGPA is below 2.5: ' + foundCGPA);
+      } else {
+        alert(successMsg);
+      }
+  }
+  else{
+    alert("Please make a choice!");
+  }
+}
