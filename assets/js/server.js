@@ -75,6 +75,27 @@ app.get('/compare', async (req, res) => {
     res.render('comparison');
 });
 
+app.get('/search', async (req, res) => {
+  res.render('search');
+});
+
+app.post('/searchResult', async (req, res) => {
+  try {
+    const {searchText} =req.body;
+
+  // Find the data for the selected courses with the searchText
+  const searchs = await Prog.find({ $or: [{name:{'$regex': searchText,$options: 'i'}},{level: {'$regex': searchText,$options: 'i'}},{description: {'$regex': searchText,$options: 'i'}}] }).exec();
+
+    // Render the 'search' EJS template with the data
+    res.render('searchResult', {
+      searchList: searchs,
+    });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 app.listen(5500, function () {
   console.log('server is running');
 });
