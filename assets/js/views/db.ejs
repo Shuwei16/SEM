@@ -9,20 +9,27 @@
     <h1 class="text-center">Sort By ID</h1>
     <table class="table table-striped-columns">
         <thead>
-            <th scope="col-md-auto">Programme ID</th>
             <th scope="col-md-auto">Programme Name</th>
             <th scope="col-md-auto">Programme Level</th>
             <th scope="col-md-auto">Price (RM)</th>
+            <th scope="col-md-auto">Duration</th>
+            <th scope="col-md-auto">Minimum Requirement</th>
             <th scope="col-md-auto">Description</th>
+            <th scope="col-md-auto">Programme Outline</th>
+            <th scope="col-md-auto">Career Prospects</th>
         </thead>
         <tbody>
             <%progList.forEach( prog => { %>
                 <tr>
-                <td scope="col"><%= prog.progID %></td>
+                <!-- <td scope="col"><%= prog.progID %></td> -->
                 <td scope="col"><%= prog.name %></td>
                 <td scope="col"><%= prog.level %></td>
                 <td scope="col"><%= prog.price %></td>
+                <td scope="col"><%= prog.Duration %></td>
+                <td scope="col"><%= prog.MinimumRequirement %></td>
                 <td scope="col"><%= prog.description %></td>
+                <td scope="col"><%= prog.ProgrammeOutline %></td>
+                <td scope="col"><%= prog.CareerProspects %></td>
                 </tr>
             <% })  %>
         </tbody>

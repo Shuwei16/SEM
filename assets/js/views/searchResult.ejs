@@ -11,13 +11,17 @@
         <table class="table table-striped-columns" style="width:90%">
             <thead>
                 <tr>
-                <th scope="col-md-auto">Searching Result</th>
+                <th scope="col">Searching Result</th>
                 </tr>
                 <tr>
                     <th scope="col-md-auto">Programme Name</th>
                     <th scope="col-md-auto">Programme Level</th>
                     <th scope="col-md-auto">Price (RM)</th>
+                    <th scope="col-md-auto">Duration</th>
+                    <th scope="col-md-auto">Minimum Requirement</th>
                     <th scope="col-md-auto">Description</th>
+                    <th scope="col-md-auto">Programme Outline</th>
+                    <th scope="col-md-auto">Career Prospects</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +30,11 @@
                         <td scope="col"><%= search.name %></td>
                         <td scope="col"><%= search.level %></td>
                         <td scope="col"><%= search.price %></td>
+                        <td scope="col"><%= search.Duration %></td>
+                        <td scope="col"><%= search.MinimumRequirement %></td>
                         <td scope="col"><%= search.description %></td>
+                        <td scope="col"><%= search.ProgrammeOutline %></td>
+                        <td scope="col"><%= search.CareerProspects %></td>
                     </tr>
                 <% })  %>
             </tbody>

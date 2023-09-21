@@ -9,24 +9,33 @@
     <h1 class="text-center">Sort By Price</h1>
     <table class="table table-striped-columns">
         <thead>
-            <th scope="col">Programme ID</th>
-            <th scope="col">Programme Name</th>
-            <th scope="col">Programme Level</th>
-            <th scope="col">Price (RM)</th>
-            <th scope="col">Description</th>
+            <th scope="col-md-auto">Programme Name</th>
+            <th scope="col-md-auto">Programme Level</th>
+            <th scope="col-md-auto">Price (RM)</th>
+            <th scope="col-md-auto">Duration</th>
+            <th scope="col-md-auto">Minimum Requirement</th>
+            <th scope="col-md-auto">Description</th>
+            <th scope="col-md-auto">Programme Outline</th>
+            <th scope="col-md-auto">Career Prospects</th>
         </thead>
         <tbody>
             <%progList.forEach( prog => { %>
                 <tr>
-                <td scope="col"><%= prog.progID %></td>
-                <td scope="col"><%= prog.name %></td>
-                <td scope="col"><%= prog.level %></td>
-                <td scope="col"><%= prog.price %></td>
-                <td scope="col"><%= prog.description %></td>
+                    <td scope="col"><%= prog.name %></td>
+                    <td scope="col"><%= prog.level %></td>
+                    <td scope="col"><%= prog.price %></td>
+                    <td scope="col"><%= prog.Duration %></td>
+                    <td scope="col"><%= prog.MinimumRequirement %></td>
+                    <td scope="col"><%= prog.description %></td>
+                    <td scope="col"><%= prog.ProgrammeOutline %></td>
+                    <td scope="col"><%= prog.CareerProspects %></td>
                 </tr>
             <% })  %>
         </tbody>
     </table>
-    <a href="/"><button class="btn btn-primary">Back</button></a>
+    <div class="text-center my-5">
+        <a href="/"><button class="btn btn-primary">Back</button></a>
+    </div>
+    
 </body>
 </html>

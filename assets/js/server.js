@@ -16,7 +16,10 @@ const progSchema = {
   level: String,
   price: Number,
   description: String,
-  url: String
+  CareerProspects:String,
+  Duration:String,
+  MinimumRequirement:String,
+  ProgrammeOutline:String
 }
 
 const Prog = mongoose.model('Programmes', progSchema);
@@ -84,7 +87,7 @@ app.post('/searchResult', async (req, res) => {
     const {searchText} =req.body;
 
   // Find the data for the selected courses with the searchText
-  const searchs = await Prog.find({ $or: [{name:{'$regex': searchText,$options: 'i'}},{level: {'$regex': searchText,$options: 'i'}},{description: {'$regex': searchText,$options: 'i'}}] }).exec();
+  const searchs = await Prog.find({ $or: [{name:{'$regex': searchText,$options: 'i'}},{level: {'$regex': searchText,$options: 'i'}},{description: {'$regex': searchText,$options: 'i'}},{CareerProspects: {'$regex': searchText,$options: 'i'}},{Duration: {'$regex': searchText,$options: 'i'}},{MinimumRequirement: {'$regex': searchText,$options: 'i'}},{ProgrammeOutline: {'$regex': searchText,$options: 'i'}}] }).exec();
 
     // Render the 'search' EJS template with the data
     res.render('searchResult', {
