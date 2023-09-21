@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #86db9f;
+  color: #ECA500;
   text-decoration: none;
 }
 
@@ -852,6 +852,15 @@ section {
 .trainers .member .social i {
   font-size: 18px;
   margin: 0 2px;
+}
+
+.trainers .container .member .member-content a {
+  font-size: 18px;
+  color: #000000;
+}
+
+.trainers .container .member .member-content a:hover {
+  color: #ECA500;
 }
 
 /*--------------------------------------------------------------
