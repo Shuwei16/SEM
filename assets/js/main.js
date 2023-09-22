@@ -218,7 +218,7 @@ function validateForm() {
         count = 0;
       }
       else{
-        alert(errorMsg);
+        alert("Sorry, you must have at least 3 credits to join this programme.");
         count = 0;
       }
   }
@@ -271,12 +271,12 @@ function validateForm() {
         count++;
       }
 
-      if(count<3) {
-        alert(errorMsg);
+      if(count<3) {//means no A
+        alert("Sorry, you must have at least 3 credits to join this programme.");
          count = 0;
          sejPass = true;
       }
-      else if(sejPass && count>=3){
+      else if(sejPass && count>=3){//means A
         alert(successMsg);
         count = 0;
         sejPass = true;
