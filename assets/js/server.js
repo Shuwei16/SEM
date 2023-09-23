@@ -8,12 +8,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 // Serve static files (including HTML) from the "public" directory
-app.use(express.static(path.join(__dirname, '..', 'public')));
+//app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(express.static('public'));
 
 // Set the views directory for EJS templates
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
@@ -120,15 +120,18 @@ app.get('/question', async (req, res) => {
 
 app.post('/updateStatus', async (req, res) => {
   const {name} = req.body;
+  const {phoneNum} = req.body;
+  const {email} = req.body;
+  const {ques} = req.body;
 
   const updatedQuestion = await Ques.updateOne(
-    { name }, // Match documents where 'name' matches the provided name
+    { name, phoneNum, email, question: ques }, // Match documents where all specified fields match
     { $set: { status: 'Solved' } } // Set the 'status' field to 'Solved'
   );
 
   const questions = await Ques.find({}).sort({ name: 1 }).exec();
 
-  res.render('searchResult', {
+  res.render('questionStatus', {
     quesList: questions,
   });
 });
@@ -185,10 +188,6 @@ app.post('/searchResult', async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
-// app.listen(5502, function () {
-//   console.log('server is running');
-// });
 
 // Start your Express server
 const port = 5500;

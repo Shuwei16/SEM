@@ -30,7 +30,7 @@
         <h1 class="text-center">Question Status</h1>
     </header>
 
-    <div id="searchResultContainer" class="mt-5 container">
+    <div class="mt-5 container">
         <% if (Array.isArray(quesList) && quesList.length> 0) { %>
             <h3 class="my-2">Total Results: <%= quesList.length %>
             </h3>
@@ -67,7 +67,7 @@
                                 <td scope="col">
                                     <% if (ques.status==='Pending' ) { %>
                                         <button style="background-color: #ECA500;border-color: #ECA500;" class="btn btn-primary"
-                                            onclick="changeStatus('<%= ques.name %>')">Solved</button>
+                                            onclick="changeStatus('<%= ques.name %>','<%= ques.phoneNum %>','<%= ques.email %>','<%= ques.question %>')">Solved</button>
                                         <% } else { %>
                                             <button class="btn btn-primary" style="background-color: #ECA500;border-color: #ECA500;" disabled>Solved</button>
                                             <% } %>
@@ -88,7 +88,7 @@
     </div>
 
     <script>
-        async function changeStatus(name) {
+        async function changeStatus(name,phoneNum,email,ques) {
             try {
                 alert('This question have been marked as Solved! Thanks for responding.');
                 const response = await fetch('/updateStatus', {
@@ -96,7 +96,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ name }),
+                    body: JSON.stringify({ name,phoneNum,email,ques }),
                 });
                 window.location.reload();
             } catch (error) {
