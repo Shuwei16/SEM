@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Database</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Compare FOCS Programmes</title>
+    <meta content="All FOCS Programmes" name="description">
+    <meta content="All FOCS Programmes" name="keywords">
+
+    <link href="/images/tarIco.ico" rel="icon" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+        <!-- ======================================================
+  * Member: Teoh Xin Zhi (2205704)
+            Leau Goon Hei (2205668)
+            Heah Jun Xi (2205650)
+            Wang Shu Wei (2205708)
+            Mah Jia Yi (2205684)
+  ======================================================== -->
 </head>
 
 <body>
+
+    <header class="my-5 mx-auto">
+        <img src="/images/tarumt-logo.png" class="w-25 rounded mx-auto d-block">
+        <h1 class="text-center">Compare FOCS Programmes</h1>
+    </header>
+
   <form id="courseForm" action="/result" method="POST">
     <div class="container mt-5">
         <div class="row">
@@ -33,14 +55,14 @@
             </select>
           </div>
           <div class="row container mt-5">
-            <button type="submit" class="btn btn-primary btn-lg"> Compare </button>
+            <button type="submit" class="btn btn-primary btn-lg" style="background-color: #ECA500;border-color: #ECA500;"> Compare </button>
           </div>
         </div>
     </div>
 </form>
 
 <!-- Container to hold the result table -->
-<div id="resultContainer"></div>
+<div id="resultContainer" class="container"></div>
 
 <script type="text/javascript">
 document.getElementById('courseForm').addEventListener('submit', async (event) => {

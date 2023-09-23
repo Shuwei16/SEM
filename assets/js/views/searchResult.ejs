@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>SearchResult</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Search Results</title>
+    <meta content="search FOCS Programmes" name="description">
+    <meta content="search FOCS Programmes" name="keywords">
+
+    <link href="/images/tarIco.ico" rel="icon" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- ======================================================
+  * Member: Teoh Xin Zhi (2205704)
+            Leau Goon Hei (2205668)
+            Heah Jun Xi (2205650)
+            Wang Shu Wei (2205708)
+            Mah Jia Yi (2205684)
+  ======================================================== -->
 </head>
+
 <body>
     <div id="searchResultContainer" class="mt-5">
-        <h3>Total Results: <%= searchList.length %></h3>
-        <table class="table table-striped-columns" style="width:90%">
-            <thead>
-                <tr>
-                <th scope="col">Searching Result</th>
-                </tr>
-                <tr>
-                    <th scope="col-md-auto">Programme Name</th>
-                    <th scope="col-md-auto">Programme Level</th>
-                    <th scope="col-md-auto">Price (RM)</th>
-                    <th scope="col-md-auto">Duration</th>
-                    <th scope="col-md-auto">Minimum Requirement</th>
-                    <th scope="col-md-auto">Description</th>
-                    <th scope="col-md-auto">Programme Outline</th>
-                    <th scope="col-md-auto">Career Prospects</th>
-                </tr>
-            </thead>
-            <tbody>
-                <%searchList.forEach( search => { %>
+        <h3>Total Results: <%= searchList.length %>
+        </h3>
+        <div class="table-responsive">
+            <table class="table table-striped-columns">
+                <thead>
                     <tr>
-                        <td scope="col"><%= search.name %></td>
-                        <td scope="col"><%= search.level %></td>
-                        <td scope="col"><%= search.price %></td>
-                        <td scope="col"><%= search.Duration %></td>
-                        <td scope="col"><%= search.MinimumRequirement %></td>
-                        <td scope="col"><%= search.description %></td>
-                        <td scope="col"><%= search.ProgrammeOutline %></td>
-                        <td scope="col"><%= search.CareerProspects %></td>
+                        <th scope="col">Searching Result</th>
                     </tr>
-                <% })  %>
-            </tbody>
-        </table>
+                    <tr>
+                        <th scope="col-md-auto">Programme Name</th>
+                        <th scope="col-md-auto">Programme Level</th>
+                        <th scope="col-md-auto">Price (RM)</th>
+                        <th scope="col-md-auto">Duration</th>
+                        <th scope="col-md-auto">Minimum Requirement</th>
+                        <th scope="col-md-auto">Description</th>
+                        <th scope="col-md-auto">Programme Outline</th>
+                        <th scope="col-md-auto">Career Prospects</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%searchList.forEach( search=> { %>
+                        <tr>
+                            <td scope="col">
+                                <%= search.name %>
+                            </td>
+                            <td scope="col">
+                                <%= search.level %>
+                            </td>
+                            <td scope="col">
+                                <%= search.price %>
+                            </td>
+                            <td scope="col">
+                                <%= search.Duration %>
+                            </td>
+                            <td scope="col">
+                                <%= search.MinimumRequirement %>
+                            </td>
+                            <td scope="col">
+                                <%= search.description %>
+                            </td>
+                            <td scope="col">
+                                <%= search.ProgrammeOutline %>
+                            </td>
+                            <td scope="col">
+                                <%= search.CareerProspects %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
+
 </html>

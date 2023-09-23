@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Database</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Question Status</title>
+    <meta content="Question Status" name="description">
+    <meta content="Question Status" name="keywords">
+
+    <link href="/images/tarIco.ico" rel="icon" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- ======================================================
+  * Member: Teoh Xin Zhi (2205704)
+            Leau Goon Hei (2205668)
+            Heah Jun Xi (2205650)
+            Wang Shu Wei (2205708)
+            Mah Jia Yi (2205684)
+  ======================================================== -->
 </head>
+
 <body>
-    <h1 class="text-center">HERE IS THE QUESTIONS STATUS PAGE</h1>
-    <div class="mx-5">
-        <div id="searchResultContainer" class="mt-5">
-            <% if (Array.isArray(quesList) && quesList.length > 0) { %>
-                <h3>Total Results: <%= quesList.length %></h3>
-                <table class="table table-hover" style="width:90%">
+
+    <header class="my-5 mx-auto">
+        <img src="/images/tarumt-logo.png" class="w-25 rounded mx-auto d-block">
+        <h1 class="text-center">Question Status</h1>
+    </header>
+
+    <div id="searchResultContainer" class="mt-5 container">
+        <% if (Array.isArray(quesList) && quesList.length> 0) { %>
+            <h3 class="my-2">Total Results: <%= quesList.length %>
+            </h3>
+            <div class="table-responsive">
+                <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <h4 class="text-center">Questions List</h4>
-                        </tr>
                         <tr>
                             <th scope="col-md-auto">Questioner's Name</th>
                             <th scope="col-md-auto">Questioner's Phone Number</th>
@@ -26,51 +47,64 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% quesList.forEach(ques => { %>
+                        <% quesList.forEach(ques=> { %>
                             <tr>
-                                <td scope="col"><%= ques.name %></td>
-                                <td scope="col"><%= ques.phoneNum %></td>
-                                <td scope="col"><%= ques.email %></td>
-                                <td scope="col"><%= ques.question %></td>
-                                <td scope="col"><%= ques.status %></td>
                                 <td scope="col">
-                                    <% if (ques.status === 'Pending') { %>
-                                        <button class="btn btn-primary" onclick="changeStatus('<%= ques.name %>')">Solved</button>
-                                    <% } else { %>
-                                        <button class="btn btn-primary" disabled>Solved</button>
-                                    <% } %>
+                                    <%= ques.name %>
+                                </td>
+                                <td scope="col">
+                                    <%= ques.phoneNum %>
+                                </td>
+                                <td scope="col">
+                                    <%= ques.email %>
+                                </td>
+                                <td scope="col">
+                                    <%= ques.question %>
+                                </td>
+                                <td scope="col">
+                                    <%= ques.status %>
+                                </td>
+                                <td scope="col">
+                                    <% if (ques.status==='Pending' ) { %>
+                                        <button style="background-color: #ECA500;border-color: #ECA500;" class="btn btn-primary"
+                                            onclick="changeStatus('<%= ques.name %>')">Solved</button>
+                                        <% } else { %>
+                                            <button class="btn btn-primary" style="background-color: #ECA500;border-color: #ECA500;" disabled>Solved</button>
+                                            <% } %>
                                 </td>
                             </tr>
-                        <% })  %>
+                            <% }) %>
                     </tbody>
                 </table>
+            </div>
             <% } else { %>
                 <p>No questions found.</p>
-            <% } %>
-        </div>
+                <% } %>
 
-        <div class="text-center my-5">
-            <a href="/"><button class="btn btn-primary">Back</button></a>
-        </div>
+                    <div class="text-center my-5">
+                        <a href="/"><button class="btn btn-primary"
+                                style="background-color: #ECA500;border-color: #ECA500;">Back</button></a>
+                    </div>
     </div>
 
     <script>
-    async function changeStatus(name) {
-        try {
-            alert('This question have been marked as Solved! Thanks for responding.');
-            const response = await fetch('/updateStatus', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({name}),
-            });
-            window.location.reload();
-        } catch (error) {
-            console.error("Error updating question status:", error);
+        async function changeStatus(name) {
+            try {
+                alert('This question have been marked as Solved! Thanks for responding.');
+                const response = await fetch('/updateStatus', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name }),
+                });
+                window.location.reload();
+            } catch (error) {
+                console.error("Error updating question status:", error);
+            }
         }
-    }
     </script>
 
 </body>
+
 </html>
